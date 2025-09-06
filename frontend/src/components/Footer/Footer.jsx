@@ -6,6 +6,49 @@ import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md'
 import { HiSparkles } from 'react-icons/hi'
 
 function Footer() {
+  // Define navigation sections with proper links
+  const navigationSections = [
+    {
+      title: 'Company',
+      items: [
+        { name: 'About Us', link: '/about', type: 'internal' },
+        { name: 'Features', link: '/features', type: 'internal' },
+        { name: 'Pricing', link: '/pricing', type: 'internal' },
+        { name: 'Careers', link: '/careers', type: 'internal' },
+        { name: 'Press Kit', link: '/press', type: 'internal' }
+      ]
+    },
+    {
+      title: 'Support',
+      items: [
+        { name: 'Help Center', link: '/help', type: 'internal' },
+        { name: 'Documentation', link: '/docs', type: 'internal' },
+        { name: 'API Reference', link: '/api-docs', type: 'internal' },
+        { name: 'Community', link: '/community', type: 'internal' },
+        { name: 'Contact Us', link: '/contact', type: 'internal' }
+      ]
+    },
+    {
+      title: 'Legal',
+      items: [
+        { name: 'Privacy Policy', link: '/privacy', type: 'internal' },
+        { name: 'Terms of Service', link: '/terms', type: 'internal' },
+        { name: 'Cookie Policy', link: '/cookies', type: 'internal' },
+        { name: 'GDPR Compliance', link: '/gdpr', type: 'internal' },
+        { name: 'Licensing', link: '/licensing', type: 'internal' }
+      ]
+    }
+  ];
+
+  // Social media links
+  const socialLinks = [
+    { Icon: FaTwitter, href: 'https://twitter.com/docai', label: 'Twitter' },
+    { Icon: FaFacebookF, href: 'https://facebook.com/docai', label: 'Facebook' },
+    { Icon: FaLinkedinIn, href: 'https://linkedin.com/company/docai', label: 'LinkedIn' },
+    { Icon: FaInstagram, href: 'https://instagram.com/docai', label: 'Instagram' },
+    { Icon: FaYoutube, href: 'https://youtube.com/docai', label: 'YouTube' }
+  ];
+
   return (
     <footer className="relative bg-gradient-to-br from-purple-50 via-indigo-50 to-teal-50 text-gray-900 border-t-2 border-purple-600 overflow-hidden">
       {/* Animated background */}
@@ -60,33 +103,63 @@ function Footer() {
 
             {/* Contact with enhanced animations */}
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-purple-700 hover:text-purple-800 transition-all duration-300 hover:translate-x-2 hover:drop-shadow-md group">
+              <a 
+                href="mailto:contact@doc-ai.com"
+                className="flex items-center gap-3 text-purple-700 hover:text-purple-800 transition-all duration-300 hover:translate-x-2 hover:drop-shadow-md group"
+              >
                 <MdEmail className="text-purple-600 group-hover:text-purple-800 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" size={18} />
                 <span className="text-sm font-medium group-hover:font-semibold transition-all duration-300">contact@doc-ai.com</span>
-              </div>
-              <div className="flex items-center gap-3 text-purple-700 hover:text-purple-800 transition-all duration-300 hover:translate-x-2 hover:drop-shadow-md group">
+              </a>
+              <a 
+                href="tel:+919526437361"
+                className="flex items-center gap-3 text-purple-700 hover:text-purple-800 transition-all duration-300 hover:translate-x-2 hover:drop-shadow-md group"
+              >
                 <MdPhone className="text-purple-600 group-hover:text-purple-800 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" size={18} />
                 <span className="text-sm font-medium group-hover:font-semibold transition-all duration-300">+91 9526437361</span>
-              </div>
+              </a>
               <div className="flex items-center gap-3 text-purple-700 hover:text-purple-800 transition-all duration-300 hover:translate-x-2 hover:drop-shadow-md group">
                 <MdLocationOn className="text-purple-600 group-hover:text-purple-800 group-hover:scale-125 group-hover:bounce transition-all duration-300" size={18} />
                 <span className="text-sm font-medium group-hover:font-semibold transition-all duration-300">Jamshedpur, India</span>
               </div>
             </div>
 
+            {/* Meet Our Team Button */}
+            <div className="pt-4 mb-4">
+              <Link
+                to="/team"
+                className="relative inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 border-2 border-purple-600 rounded-lg text-white font-semibold hover:from-purple-700 hover:to-indigo-700 hover:border-purple-700 transition-all duration-300 hover:shadow-xl hover:shadow-purple-400/50 hover:scale-105 group/btn overflow-hidden"
+              >
+                {/* Button ripple effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-indigo-600 opacity-0 group-hover/btn:opacity-100 transition-all duration-300"></div>
+                
+                {/* Team icon */}
+                <svg className="relative z-10 w-5 h-5 group-hover/btn:scale-110 transition-all duration-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                </svg>
+                
+                <span className="relative z-10 group-hover/btn:font-bold transition-all duration-300">Meet Our Team</span>
+                
+                {/* Button glow */}
+                <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-10 group-hover/btn:animate-pulse transition-all duration-300"></div>
+              </Link>
+            </div>
+
             {/* Enhanced Social with impressive animations */}
-            <div className="flex gap-4 pt-4">
-              {[FaTwitter, FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube].map((Icon, idx) => (
+            <div className="flex gap-4 pt-2">
+              {socialLinks.map((social, idx) => (
                 <a
                   key={idx}
-                  href="#"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
                   className="relative w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center border-2 border-transparent hover:border-purple-600 hover:bg-white transition-all duration-500 text-purple-700 hover:text-purple-800 group overflow-hidden"
                 >
                   {/* Ripple effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-200 to-indigo-200 rounded-full scale-0 group-hover:scale-150 opacity-0 group-hover:opacity-30 transition-all duration-700"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-300 to-teal-200 rounded-full scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-20 transition-all duration-500 delay-100"></div>
                   
-                  <Icon 
+                  <social.Icon 
                     size={20} 
                     className="relative z-10 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 drop-shadow-md group-hover:drop-shadow-lg" 
                     style={{
@@ -103,11 +176,7 @@ function Footer() {
 
           {/* Navigation with impressive card effects */}
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: 'Company', items: ['About Us', 'Features', 'Pricing', 'Careers', 'Press Kit'] },
-              { title: 'Support', items: ['Help Center', 'Documentation', 'API Reference', 'Community', 'Contact Us'] },
-              { title: 'Legal', items: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'GDPR Compliance', 'Licensing'] }
-            ].map((section, idx) => (
+            {navigationSections.map((section, idx) => (
               <div key={idx} className="group">
                 <div className="relative bg-purple-50 rounded-lg p-6 border-2 border-transparent hover:border-purple-600 hover:bg-white transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-300/50 overflow-hidden">
                   {/* Animated background gradient on hover */}
@@ -124,23 +193,51 @@ function Footer() {
                     <ul className="space-y-3">
                       {section.items.map((item, index) => (
                         <li key={index} className="transform transition-all duration-300 hover:translate-x-3">
-                          <Link
-                            to="/"
-                            className="text-purple-700 hover:text-purple-800 transition-all duration-300 flex items-center gap-2 group/link relative overflow-hidden py-1"
-                          >
-                            {/* Expanding underline */}
-                            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 group-hover/link:w-full transition-all duration-300"></div>
-                            
-                            {/* Animated dot */}
-                            <span className="w-1 h-1 bg-purple-600 rounded-full opacity-0 group-hover/link:opacity-100 group-hover/link:scale-150 group-hover/link:bg-purple-800 transition-all duration-300"></span>
-                            
-                            <span className="group-hover/link:font-semibold group-hover/link:drop-shadow-sm transition-all duration-300">
-                              {item}
-                            </span>
-                            
-                            {/* Hover glow effect */}
-                            <div className="absolute inset-0 bg-purple-200 opacity-0 group-hover/link:opacity-20 rounded transition-all duration-300"></div>
-                          </Link>
+                          {item.type === 'internal' ? (
+                            <Link
+                              to={item.link}
+                              className="text-purple-700 hover:text-purple-800 transition-all duration-300 flex items-center gap-2 group/link relative overflow-hidden py-1"
+                            >
+                              {/* Expanding underline */}
+                              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 group-hover/link:w-full transition-all duration-300"></div>
+                              
+                              {/* Animated dot */}
+                              <span className="w-1 h-1 bg-purple-600 rounded-full opacity-0 group-hover/link:opacity-100 group-hover/link:scale-150 group-hover/link:bg-purple-800 transition-all duration-300"></span>
+                              
+                              <span className="group-hover/link:font-semibold group-hover/link:drop-shadow-sm transition-all duration-300">
+                                {item.name}
+                              </span>
+                              
+                              {/* Hover glow effect */}
+                              <div className="absolute inset-0 bg-purple-200 opacity-0 group-hover/link:opacity-20 rounded transition-all duration-300"></div>
+                            </Link>
+                          ) : (
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-purple-700 hover:text-purple-800 transition-all duration-300 flex items-center gap-2 group/link relative overflow-hidden py-1"
+                            >
+                              {/* Expanding underline */}
+                              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 group-hover/link:w-full transition-all duration-300"></div>
+                              
+                              {/* Animated dot */}
+                              <span className="w-1 h-1 bg-purple-600 rounded-full opacity-0 group-hover/link:opacity-100 group-hover/link:scale-150 group-hover/link:bg-purple-800 transition-all duration-300"></span>
+                              
+                              <span className="group-hover/link:font-semibold group-hover/link:drop-shadow-sm transition-all duration-300">
+                                {item.name}
+                              </span>
+                              
+                              {/* External link indicator */}
+                              <svg className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-all duration-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clipRule="evenodd" />
+                                <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clipRule="evenodd" />
+                              </svg>
+                              
+                              {/* Hover glow effect */}
+                              <div className="absolute inset-0 bg-purple-200 opacity-0 group-hover/link:opacity-20 rounded transition-all duration-300"></div>
+                            </a>
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -197,7 +294,7 @@ function Footer() {
             <div className="flex flex-col sm:flex-row items-center gap-4 text-purple-700 text-sm hover:text-purple-800 transition-all duration-300">
               <span className="hover:font-semibold hover:drop-shadow-md transition-all duration-300">&copy; {new Date().getFullYear()} DOC-AI. All rights reserved.</span>
               <div className="hidden sm:block w-1 h-1 bg-purple-600 rounded-full animate-pulse"></div>
-              <span className="hover:font-semibold hover:drop-shadow-md transition-all duration-300">Designed with ❤️ for AI-powered healthcare</span>
+              <span className="hover:font-semibold hover:drop-shadow-md transition-all duration-300">Designed with ❤ for AI-powered healthcare</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-purple-700 hover:text-purple-800 transition-all duration-300">
               <span className="flex items-center gap-2 hover:scale-110 transition-all duration-300">

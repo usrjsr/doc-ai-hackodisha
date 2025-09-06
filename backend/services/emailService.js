@@ -17,7 +17,7 @@ export const sendVerificationEmail = async (email, username, verificationCode) =
   const transporter = createTransporter();
   
   const mailOptions = {
-    from: `"Healthcare App" <${process.env.EMAIL_USER}>`,
+    from: `"DOC-AI" <${process.env.EMAIL_USER}>`,
     to: email,
     subject: 'Verify Your Email Address',
     html: `
@@ -54,9 +54,9 @@ export const sendWelcomeEmail = async (email, username) => {
   const transporter = createTransporter();
   
   const mailOptions = {
-    from: `"Healthcare App" <${process.env.EMAIL_USER}>`,
+    from: `"DOC-AI" <${process.env.EMAIL_USER}>`,
     to: email,
-    subject: 'Welcome to Healthcare App!',
+    subject: 'Welcome to DOC-AI!',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
